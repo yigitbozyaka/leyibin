@@ -40,7 +40,7 @@ export default function Personal() {
       <div className="min-h-screen bg-primary text-quaternary flex flex-col items-center gap-10 py-10">
         <Layout />
 
-        <div className="lg:px-16 mx-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className={`lg:px-16 mx-4 ${storedPastes.length > 0 ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5' : 'h-[60vh] flex justify-center items-center'}`}>
           {storedPastes.length > 0 ? storedPastes?.map((paste: PasteData) => (
             <PasteBox
               key={paste.id}
